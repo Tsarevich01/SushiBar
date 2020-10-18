@@ -1,0 +1,30 @@
+<div class="content">
+    <div>
+        <h1>Суши</h1>
+    </div>
+    <input [(ngModel)]="findText" type="text">
+    <input class="search" placeholder="Сообщение :" [(ngModel)]="this.message">
+    <table>
+        <tr *ngFor="let product of products">
+            <td style="text-align: center;">
+                <mdb-card>
+                    <!--Card image-->
+                    <mdb-card-img src={{product.url}} alt="Card image cap"></mdb-card-img>
+                    <!--Card content-->
+                    <mdb-card-body>
+
+                        <!--Title-->
+                        <mdb-card-title>
+                        <h4>{{product.name}} <br> {{product.price}} </h4>
+                        </mdb-card-title>
+
+                        <!--Text-->
+                        <mdb-card-text [innerHTML]="product.description"></mdb-card-text>
+
+                        <!-- <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a> -->
+                    </mdb-card-body>
+                </mdb-card>
+            </td>
+        </tr>
+    </table>
+</div>

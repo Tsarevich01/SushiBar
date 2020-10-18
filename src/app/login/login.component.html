@@ -1,0 +1,13 @@
+<div class="textUnderHeader">
+    <input [(ngModel)]="login" type="text" placeholder="login">
+    <br>
+    <input [(ngModel)]="password" type="password" placeholder="password">
+    <br>
+    <button (click)="buttonLoginClick()">Вход</button>
+    <br>
+    <button routerLink="/register">Зарегестрироваться</button>
+    <br>
+    <a href="https://oauth.yandex.ru/authorize?response_type=token&client_id=ddd36c49c4344c569235614af47045ef">
+      Войти через яндекс
+    </a>
+</div>

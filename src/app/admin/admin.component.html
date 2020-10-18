@@ -1,0 +1,37 @@
+<div class="textUnderHeader">
+    <button (click)="buttonCreateUpdateClick()" [textContent]="isUpdate ? 'Изменить' : 'Добавить'"></button>
+    <br>
+    <input [(ngModel)]="product.name" type="text" placeholder="name">
+    <input [(ngModel)]="product.price" type="text" placeholder="price">
+    <input [(ngModel)]="product.url" type="text" placeholder="url">
+    <br>
+    <ckeditor
+      [(ngModel)]="product.description"
+      [config]="{uiColor: '#f1d941'}"
+      [readonly]="false"
+      debounce="500">
+    </ckeditor>
+    <table rules="all" class="productsTable">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+                <th>price</th>
+                <th>url</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.url}}</td>
+            <td>
+                <button (click)="buttonLoadUpdateClick(product.id)">Обновить</button>
+                <button (click)="buttonDeleteClick(product.id)">Удалить</button>
+            </td>
+        </tr>
+    </table>
+</div>

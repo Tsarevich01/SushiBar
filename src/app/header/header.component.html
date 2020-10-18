@@ -1,0 +1,10 @@
+<div class="toolbar" role="banner">
+    <span>Classic Sushi</span>
+
+    <nav>
+      <a routerLink="/">Главная</a>
+      <a routerLink="/goods" style="margin: 50px;">Товары</a>
+      <a routerLink="/files" >Файлы</a>
+      <a (click)="buttonLoginLogoutClick()" [textContent]="isAuthed ? 'Выйти' : 'Войти'" style="margin: 50px;"></a>
+    </nav>
+</div>
